@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: redis
-  name: redis
+    app: db
+  name: db
   namespace: vote
 spec:
   selector:
-    app: redis
+    app: db
   ports:
-  - port: 6379
-    targetPort: 6379
-    name: "redis-service"
+  - port: 5432
+    targetPort: 5432
+    name: "db-service"
   type: ClusterIP #serviço privado dentro do cluster
